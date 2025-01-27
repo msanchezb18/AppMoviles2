@@ -37,8 +37,8 @@ export const style_01 = StyleSheet.create({
     fontWeight: "300",
   },
   h1: {
-    color: principal,
-    marginTop: 5,
+    color: blanco,
+    marginTop: 1,
     marginBottom: 5,
     fontSize: 24,
     fontWeight: "bold",
