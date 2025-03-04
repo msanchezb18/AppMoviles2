@@ -7,7 +7,7 @@ const App = () => {
     const initDB = async () => {
       try {
         const db = await getConnection();
-        await createTable(db);
+        createTable(db);
         console.log("Base de datos inicializada correctamente.");
       } catch (error) {
         console.error("Error inicializando la base de datos:", error);

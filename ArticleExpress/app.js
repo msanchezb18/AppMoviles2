@@ -11,17 +11,17 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 // Conexión a MongoDB
-mongoose.connect("mongodb://localhost:27017/dbArticles", {
+mongoose.connect("mongodb://localhost:27017/turismoDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 // Rutas
 const indexRouter = require("./routes/index");
-const parqueRouter = require("./routes/parques");
+const lugaresRouter = require("./routes/lugares");
 
 app.use("/", indexRouter);
-app.use("/parque", parqueRouter);
+app.use("/lugares", lugaresRouter);
 
 // Iniciar el servidor
 const port = process.env.PORT || 5005;
