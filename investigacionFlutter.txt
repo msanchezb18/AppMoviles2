@@ -1,0 +1,434 @@
+=================================================================================
+University.: Universidad Técnica Nacional
+Campus.....: Pacífico (JRMP)
+Career.....: Ingeniería en Tecnologías de Información
+Period.....: 1C-2025
+Course.....: ITI-721 - Desarrollo de Aplicaciones para Dispositivos Móviles II
+Document...: Conceptos básicos de Flutter.txt
+Student....:Camila Sanchez Bejarano, David Ruiz Vargas, Daniela Carvajal Pizarro
+=================================================================================
+
+Step 01 - Install Flutter SDK
+
+	- Open PowerShell 
+
+		- Go to drive C: or D: or any other drive where you have write rights.
+		
+		- Locate your target directory (in my case: D:\Programs):
+		
+			git clone https://github.com/flutter/flutter.git -b stable
+
+
+	- Edit environment variables for your account
+
+		- Update PATH variable, add the new route:
+		
+			D:\Programs\flutter\bin		(in my case)
+	
+		
+	- Restart PowerShell and run:
+	
+		where.exe flutter dart		( 
+	
+			- A message like the following should be displayed:
+			
+				D:\Programs\flutter\bin\flutter
+				D:\Programs\flutter\bin\flutter.bat
+				D:\Programs\flutter\bin\dart
+				D:\Programs\flutter\bin\dart.bat
+			 
+
+Step 02 - Update IDEs
+
+	- Visual Studio Code:
+	
+		- In PowerShell run the next command:
+		
+			code --version
+			
+				- A message like the following should be displayed:
+				
+					1.96.4
+					cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
+					x64
+	
+		- Open Visual Studio Code:
+		
+			- Open Extensions Tab (left pane)
+				
+			- Search Flutter in MarketPlace and select:
+				
+				Flutter
+				Dart Code...: dartcode.org
+				Version.....: 3.106.0
+				Released....: 2025-03-03 	
+					
+				10,470,258	(downloads aprox) 
+					
+
+			- Click [Trust Publisher & Install] button
+
+
+	- IntelliJ IDEA		
+		
+		- Open IntelliJ IDEA (version 2024.3.4.1)
+		
+			- Select Plugins, click on Marketplace
+			
+				- Search Flutter and select
+			
+					Flutter
+					Version...: 83.0.4
+					Vendor....: Google
+	
+	
+	- Andriod Studio
+	
+		- Open Android Studio (LadyBug 2024.2.2) 
+		
+			- Verify that the following components have been installed in your system
+			
+				- Android SDK Platform, API 35.0.2	(Vanilla Icecream)
+				
+				- Android SDK Command-line Tools	
+				
+				- Android SDK Build-Tools			
+				
+				- Android SDK Platform-Tools		
+				
+				- Android Emulator					
+				
+		- In PowerShell execute:
+
+			flutter doctor
+			
+				- A message like the following should be displayed:
+				
+					Checking Dart SDK version...
+					Downloading Dart SDK from Flutter engine ...
+					Expanding downloaded archive with PowerShell...
+					Building flutter tool...
+					Running pub upgrade...
+					Resolving dependencies... (2.1s)
+					Downloading packages... (8.5s)
+					Got dependencies.
+
+					  ╔════════════════════════════════════════════════════════════════════════════╗
+					  ║                 Welcome to Flutter! - https://flutter.dev                  ║
+					  ║ The Flutter tool uses Google Analytics to anonymously report feature usage ║
+					  ║ statistics and basic crash reports. This data is used to help improve      ║
+					  ║ Flutter tools over time.                                                   ║
+					  ║                                                                            ║
+					  ║ Flutter tool analytics are not sent on the very first run. To disable      ║
+					  ║ reporting, type 'flutter config --no-analytics'. To display the current    ║
+					  ║ setting, type 'flutter config'. If you opt out of analytics, an opt-out    ║
+					  ║ event will be sent, and then no further information will be sent by the    ║
+					  ║ Flutter tool.                                                              ║
+					  ║                                                                            ║
+					  ║ By downloading the Flutter SDK, you agree to the Google Terms of Service.  ║
+					  ║ The Google Privacy Policy describes how data is handled in this service.   ║
+					  ║                                                                            ║
+					  ║ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  ║
+					  ║ crash reports to Google.                                                   ║
+					  ║                                                                            ║
+					  ║ Read about data we send with crash reports:                                ║
+					  ║ https://flutter.dev/to/crash-reporting                                     ║
+					  ║                                                                            ║
+					  ║ See Google's privacy policy:                                               ║
+					  ║ https://policies.google.com/privacy                                        ║
+					  ║                                                                            ║
+					  ║ To disable animations in this tool, use                                    ║
+					  ║ 'flutter config --no-cli-animations'.                                      ║
+					  ╚════════════════════════════════════════════════════════════════════════════╝
+
+
+					Downloading Material fonts...                                      911ms
+					Downloading Gradle Wrapper...                                      112ms
+					Downloading package sky_engine...                                  194ms
+					Downloading package flutter_gpu...                                  94ms
+					Downloading flutter_patched_sdk tools...                           333ms
+					Downloading flutter_patched_sdk_product tools...                   332ms
+					Downloading windows-x64 tools...                                 1,654ms
+					Downloading windows-x64/font-subset tools...                       192ms
+					Doctor summary (to see all details, run flutter doctor -v):
+					[✓] Flutter (Channel stable, 3.29.2, on Microsoft Windows [Version 10.0.19045.5608], locale en-US)
+					[✓] Windows Version (10 Pro 64-bit, 22H2, 2009)
+					[✓] Android toolchain - develop for Android devices (Android SDK version 35.0.0)
+					[✓] Chrome - develop for the web
+					[✓] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.12.5)
+					[✓] Android Studio (version 2022.3)
+					[✓] Android Studio (version 2024.2)
+					[✓] IntelliJ IDEA Ultimate Edition (version 2024.3)
+					[✓] Connected device (3 available)
+					[✓] Network resources
+
+					• No issues found!
+				
+			
+		- Execute the next command for more details
+		
+			flutter doctor -v	
+			
+		
+		- In Android Studio:
+		
+			- Select Plugins, click on Marketplace tab
+			
+				- Search Flutter and select
+			
+					Flutter
+					Version...: 83.0.4
+					Vendor....: Google	
+					
+				- Install
+
+		- Restart Android Studio
+
+
+Step 03 - Create the first Flutter Application
+
+	- Visual Studio Code:
+
+		- Open your work directory and execute the next command:
+		
+			flutter create appflutter_01
+		
+		- Open the appflutter_01 directory with Visual Studio Code
+		
+			code .			
+			
+		- Open the new terminal	and executes:	
+		
+			flutter run		(fist time your application run on Web Browser selected by you)
+			
+			
+		- Connect your cellphone (developer options must be enabled) and/or  AVD from Android Studio	
+		
+			- In the terminal executes:
+			
+				flutter devices
+			
+				- A message like the following should be displayed:
+				
+					Found 5 connected devices:
+					
+					WP19 Pro (mobile)            • JB9TZ5HI95ZDQ4JF • android-arm64  • Android 13 (API 33)
+					sdk gphone64 x86 64 (mobile) • emulator-5554    • android-x64    • Android 13 (API 33) (emulator)
+					Windows (desktop)            • windows          • windows-x64    • Microsoft Windows [Version 10.0.19045.5608]
+					Chrome (web)                 • chrome           • web-javascript • Google Chrome 133.0.6943.142
+					Edge (web)                   • edge             • web-javascript • Microsoft Edge 134.0.3124.72
+
+					Run "flutter emulators" to list and start any available device emulators.
+
+					If you expected another device to be detected, please run "flutter doctor" to diagnose potential issues. 
+					You may also try increasing the time to wait for connected devices with the      
+					
+						"--device-timeout" flag. 
+					
+					Visit https://flutter.dev/setup/ for troubleshooting tips.
+					
+					
+			- Run again:
+			
+				flutter run	
+
+	- Y.U.P.I (01)			
+				
+
+Step 04 - Aplying the first changes:
+
+- Open <root_project>/lib/main.dart
+	
+		- Delete all code and writes:
+
+	import 'package:flutter/material.dart';
+
+const Map<String, String> foodDescriptions = {
+  'Pizza':
+      'La pizza es un plato italiano que consiste en una base de pan con salsa de tomate, queso y diversos ingredientes.',
+  'Sushi':
+      'El sushi es un plato japonés hecho con arroz avinagrado, pescado, mariscos y vegetales, a menudo envuelto en alga nori.',
+  'Tacos':
+      'Los tacos son una comida mexicana hecha con tortillas rellenas de carne, queso, verduras y salsas.',
+  'Pasta':
+      'La pasta es un alimento italiano a base de harina de trigo, generalmente servido con salsas como boloñesa o carbonara.',
+  'Burger':
+      'Las hamburguesas son un plato popular que consiste en carne molida en pan con diversos ingredientes como lechuga y queso.',
+};
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  static const appTitle = 'Menú';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: appTitle,
+      home: MyHomePage(title: appTitle),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final List<Widget> _widgetOptions = [
+    const Center(child: Text('Index 0: Home', style: optionStyle)),
+    const DropdownMenuExample(),
+    const Center(child: Text('Index 2: Bebidas', style: optionStyle)),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
+      body: _widgetOptions[_selectedIndex],
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text('Ordene su Comida'),
+            ),
+            ListTile(
+              title: const Text('Home'),
+              selected: _selectedIndex == 0,
+              onTap: () {
+                _onItemTapped(0);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Comida'),
+              selected: _selectedIndex == 1,
+              onTap: () {
+                _onItemTapped(1);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Bebida'),
+              selected: _selectedIndex == 2,
+              onTap: () {
+                _onItemTapped(2);
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DropdownMenuExample extends StatefulWidget {
+  const DropdownMenuExample({super.key});
+
+  @override
+  State<DropdownMenuExample> createState() => _DropdownMenuExampleState();
+}
+
+typedef MenuEntry = DropdownMenuEntry<String>;
+
+class _DropdownMenuExampleState extends State<DropdownMenuExample> {
+  String dropdownValue = foodDescriptions.keys.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          '¿Cuál es tu comida favorita?',
+          style: TextStyle(fontSize: 20),
+        ),
+        const SizedBox(height: 20),
+        DropdownButton<String>(
+          value: dropdownValue,
+          onChanged: (String? newValue) {
+            setState(() {
+              dropdownValue = newValue!;
+            });
+          },
+          items:
+              foodDescriptions.keys.map<DropdownMenuItem<String>>((
+                String food,
+              ) {
+                return DropdownMenuItem<String>(value: food, child: Text(food));
+              }).toList(),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          'Seleccionaste: $dropdownValue',
+          style: const TextStyle(fontSize: 18),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          child: const Text('Mostrar Información'),
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return SizedBox(
+                  height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          dropdownValue,
+                          style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          foodDescriptions[dropdownValue]!,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          child: const Text('Cerrar'),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
+
